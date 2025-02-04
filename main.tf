@@ -22,11 +22,11 @@ module "eks_al2" {
       ami_type       = "AL2_x86_64"
       instance_types = ["t2.micro"]
 
-      min_size = 0
+      min_size = 1
       max_size = 2
       # This value is ignored after the initial creation
       # https://github.com/bryantbiggs/eks-desired-size-hack
-      desired_size = 0
+      desired_size = 1
     }
   }
 
