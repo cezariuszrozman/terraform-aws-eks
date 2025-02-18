@@ -85,7 +85,7 @@ jobs:
 
     # # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform unlock
-      run: terraform force-unlock -force 549594a4-5b85-9bad-b5e2-f6aedcd69f76
+      run: terraform force-unlock -force "549594a4-5b85-9bad-b5e2-f6aedcd69f76"
 
     # # Checks that all Terraform configuration files adhere to a canonical format
     # - name: Terraform Format
