@@ -1,5 +1,5 @@
 locals {
-  name   = "czarus"
+  name   = "demo-cluster"
   region = "eu-west-1"
   tags = {
     cluster-name = local.name
