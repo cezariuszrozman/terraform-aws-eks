@@ -5,3 +5,5 @@ variable "vpc_id" {
 variable "private_subnets" {
   description = "default private subnets"
 }
+
+variable "namespace" {}
