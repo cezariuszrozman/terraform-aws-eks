@@ -1,10 +1,10 @@
 resource "aws_route53_zone" "primary" {
-  name = "example.com"
+  name = "szkolenie.com"
 
   tags = merge(
     local.tags,
     {
-      Name = "example.com"
+      Name = "szkolenie.com"
     }
   )
 }
