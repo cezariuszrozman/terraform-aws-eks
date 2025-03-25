@@ -96,3 +96,18 @@ resource "helm_release" "aws_load_balancer_controller" {
     value = module.lb_controller_role.iam_role_arn
   }
 }
+
+module "eks_aws_auth" {
+  source  = "terraform-aws-modules/eks/aws//modules/aws-auth"
+  version = "~> 20.0"
+
+  manage_aws_auth_configmap = true
+
+  aws_auth_users = [
+    {
+      userarn  = "arn:aws:iam::235494779003:root"
+      username = "root"
+      groups   = ["system:masters"]
+    }
+  ]
+}
