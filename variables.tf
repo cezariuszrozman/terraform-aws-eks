@@ -7,3 +7,4 @@ variable "private_subnets" {
 }
 
 variable "namespace" {}
+variable "domain" {}

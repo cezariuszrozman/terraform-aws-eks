@@ -66,6 +66,17 @@ resource "helm_release" "argocd" {
     value = "true"
   }
 
+  # Optional: Configure ingress
+  set {
+    name  = "server.ingress.ingressClassName"
+    value = "alb"
+  }
+
+  set {
+    name = "global.domain"
+    domain: "argocd.${var.domain}"
+  }
+
   # Optional: Add values from a file for more complex configurations
   # values = [
   #   file("${path.module}/argocd-values.yaml")
@@ -112,3 +123,4 @@ output "argocd_admin_password" {
   value       = random_password.argocd_admin_password.result
   sensitive   = true
 }
+
