@@ -74,7 +74,7 @@ resource "helm_release" "argocd" {
 
   set {
     name   = "global.domain"
-    domain = "argocd.${var.domain}"
+    value = "argocd.${var.domain}"
   }
 
   # Optional: Add values from a file for more complex configurations
