@@ -78,11 +78,11 @@ resource "helm_release" "argocd" {
 }
 
 # Optional: Output the ArgoCD server URL
-output "argocd_server_url" {
-  description = "URL of the ArgoCD server"
-  value       = resource.helm_release.argocd.status == "deployed" ? kubernetes_service.argocd_server_service.status.0.load_balancer.0.ingress.0.hostname : ""
-  depends_on  = [helm_release.argocd]
-}
+# output "argocd_server_url" {
+#   description = "URL of the ArgoCD server"
+#   value       = resource.helm_release.argocd.status == "deployed" ? kubernetes_service.argocd_server_service.status.0.load_balancer.0.ingress.0.hostname : ""
+#   depends_on  = [helm_release.argocd]
+# }
 
 # Optional: Create a Kubernetes Secret for the ArgoCD admin password
 resource "random_password" "argocd_admin_password" {
