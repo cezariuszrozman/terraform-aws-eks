@@ -14,7 +14,7 @@ resource "helm_release" "argocd" {
   namespace  = kubernetes_namespace.argocd.metadata[0].name
 
   # Wait for the release to be deployed
-  wait = true
+  wait    = true
   timeout = 600 # 10 minutes
 
   # Basic configuration values
@@ -73,7 +73,7 @@ resource "helm_release" "argocd" {
   }
 
   set {
-    name   = "global.domain"
+    name  = "global.domain"
     value = "argocd.${var.domain}"
   }
 
